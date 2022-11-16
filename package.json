@@ -1,0 +1,32 @@
+{
+  "name": "local-remote-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-local": "webpack --config local/webpack.config.prod.js",
+    "build-remote": "webpack --config remote/webpack.config.prod.js",
+    "build": "npm run build-local && npm run build-remote",
+    "serve-remote": "webpack serve --config remote/webpack.config.dev.js --no-hot --live-reload --port 5000",
+    "serve-local": "webpack serve --config local/webpack.config.dev.js --open --no-hot --live-reload --port 5001",
+    "serve": "concurrently \"npm run serve-remote\"  \"npm run serve-local\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^7.5.0",
+    "css-loader": "^6.7.1",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "sass": "^1.56.1",
+    "sass-loader": "^13.2.0",
+    "string-replace-loader": "^3.1.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "remoteUrl": "todo_add_remote_url"
+}
