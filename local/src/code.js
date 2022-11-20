@@ -1,4 +1,4 @@
-window.processData = (data) => {
-  console.log(`process data ${data}`);
-  return `the date is ${data}`;
+window.userFunction = (date) => {
+  console.log(`process date ${date.toString()}`);
+  return `the date is ${date}`;
 };
